@@ -1,0 +1,14 @@
+C:\Users\admin\Documents\ProgaPapka\Domaska\Domaska\bin\Debug\net6.0\Domaska.exe
+C:\Users\admin\Documents\ProgaPapka\Domaska\Domaska\bin\Debug\net6.0\Domaska.deps.json
+C:\Users\admin\Documents\ProgaPapka\Domaska\Domaska\bin\Debug\net6.0\Domaska.runtimeconfig.json
+C:\Users\admin\Documents\ProgaPapka\Domaska\Domaska\bin\Debug\net6.0\Domaska.dll
+C:\Users\admin\Documents\ProgaPapka\Domaska\Domaska\bin\Debug\net6.0\Domaska.pdb
+C:\Users\admin\Documents\ProgaPapka\Domaska\Domaska\obj\Debug\net6.0\Domaska.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\Documents\ProgaPapka\Domaska\Domaska\obj\Debug\net6.0\Domaska.AssemblyInfoInputs.cache
+C:\Users\admin\Documents\ProgaPapka\Domaska\Domaska\obj\Debug\net6.0\Domaska.AssemblyInfo.cs
+C:\Users\admin\Documents\ProgaPapka\Domaska\Domaska\obj\Debug\net6.0\Domaska.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\ProgaPapka\Domaska\Domaska\obj\Debug\net6.0\Domaska.dll
+C:\Users\admin\Documents\ProgaPapka\Domaska\Domaska\obj\Debug\net6.0\refint\Domaska.dll
+C:\Users\admin\Documents\ProgaPapka\Domaska\Domaska\obj\Debug\net6.0\Domaska.pdb
+C:\Users\admin\Documents\ProgaPapka\Domaska\Domaska\obj\Debug\net6.0\Domaska.genruntimeconfig.cache
+C:\Users\admin\Documents\ProgaPapka\Domaska\Domaska\obj\Debug\net6.0\ref\Domaska.dll
