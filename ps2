@@ -1,0 +1,174 @@
+//namespace PiCalculator
+//{
+//    internal class Program
+//    {
+//        static double CalcPi(double eps)
+//        {
+//            double an = 1;
+//            double summ = an;
+//            int n = 0;
+
+//            while (Math.Abs(an) > eps)
+//            {
+//                an = an * (-(2 * n + 1) / (3.0 * (2 * n + 3)));
+//                summ += an;
+//                n++;
+//            }
+//            return 2 * Math.Sqrt(3) * summ;
+//        }
+
+//        static void Main(string[] args)
+//        {
+//            Console.Write("eps = ");
+//            double eps = double.Parse(Console.ReadLine());
+
+//            double pi = CalcPi(eps);
+//            Console.WriteLine("Расчетное = " + pi);
+//            Console.WriteLine("Модельное = " + Math.PI);
+//        }
+//    }
+//}
+
+//namespace Taylor
+//{
+//    internal class Program
+//    {
+//        static double CalcSum(double x, double eps, out int n)
+//        {
+//            double an = x;
+//            double sum = an;
+//            n = 0;
+
+//            while (Math.Abs(an) > eps)
+//            {
+//                an = an * (-x * x * (2 * n + 1) / (2 * n + 3));
+//                sum += an;
+//                n++;
+//            }
+//            return sum;
+//        }
+
+//        static void Main(string[] args)
+//        {
+//            Console.Write("x = ");
+//            double x = double.Parse(Console.ReadLine());
+
+//            Console.Write("eps = ");
+//            double eps = double.Parse(Console.ReadLine());
+
+//            int n;
+//            double res = CalcSum(x, eps, out n);
+
+//            double real = Math.Atan(x);
+
+//            Console.WriteLine($"Кол-во шагов = {n}");
+//            Console.WriteLine($"Расчетное = {res}, модельное = {real}");
+//        }
+//    }
+//}
+
+//namespace Integral
+//{
+//    internal class Program
+//    {
+//        static double F(double x)
+//        {
+//            return Math.Sin(2 * Math.Sin(2 * x));
+//        }
+
+//        static double LeftRectangle(double left, double right, int iterations)
+//        {
+//            double h = (right - left) / iterations;
+//            double s = 0;
+
+//            for (double x = left; x < right; x += h)
+//            {
+//                s += F(x) * h;
+//            }
+//            return s;
+//        }
+
+//        static double RightRectangle(double left, double right, int iterations)
+//        {
+//            double h = (right - left) / iterations;
+//            double s = 0;
+
+//            for (double x = left + h; x <= right; x += h)
+//            {
+//                s += F(x) * h;
+//            }
+//            return s;
+//        }
+
+//        static double Trapecia(double left, double right, int iterations)
+//        {
+//            double h = (right - left) / iterations;
+//            double s = 0;
+
+//            for (double x = left; x < right; x += h)
+//            {
+//                s += F(x) + F(x + h);
+//            }
+//            return s * h / 2;
+//        }
+
+//        static double Simpson(double left, double right, int iterations)
+//        {
+//            double h = (right - left) / iterations;
+//            double s = 0;
+
+//            for (double x = left; x < right; x += h)
+//            {
+//                double x1 = x;
+//                double x2 = x + h;
+
+//                s += (x2 - x1) / 6.0 * (F(x1) + 4.0 * F(0.5 * (x1 + x2)) + F(x2));
+//            }
+//            return s;
+//        }
+//        static double MonteCarlo(double left, double right, int iterations)
+//        {
+//            double maxY = 1;
+//            double minY = 0;
+
+//            double s = (right - left) * (maxY - minY);
+//            int count = 0;
+//            Random random = new Random();
+//            for (int i = 0; i < n; i++)
+//            {
+//                double x = random.NextDouble() * (right - left) + left;
+//                double y = random.NextDouble() * (maxY - minY) + minY;
+
+//                if (y < F(x))
+//                {
+//                    count++;
+//                }
+//            }
+//            return s * count / iterations;
+//        }
+
+
+//        static void Main(string[] args)
+//        {
+//            Console.Write("n = ");
+//            int iterations = int.Parse(Console.ReadLine());
+
+//            double left = 0;
+//            double right = 1;
+
+//            double s1 = LeftRectangle(left, right, iterations);
+//            double s2 = RightRectangle(left, right, iterations);
+//            double s3 = Trapecia(left, right, iterations);
+//            double s4 = Simpson(left, right, iterations);
+//            double s5 = MonteCarlo(left, right, iterations);
+
+
+//            Console.WriteLine("Формула левых прям-ов = " + s1);
+//            Console.WriteLine("Формула правых прям-ов = " + s2);
+//            Console.WriteLine("Формула трапеций = " + s3);
+//            Console.WriteLine("Формула Симпсона = " + s4);
+//            Console.WriteLine("Формула Монте-Карло = " + s5);
+
+//        }
+//    }
+//}
