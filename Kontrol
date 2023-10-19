@@ -1,0 +1,130 @@
+//задание 1, 2 вариант
+internal class Program
+{
+    static bool Symmetric(int[] arr)
+    {
+        int length = arr.Length;
+        for (int i = 0; i < length / 2; i++)
+        {
+            if (arr[i] != arr[length - i - 1])
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    static void Main(string[] args)
+    {
+        int[] array = { 1, 2, 3, 1, 2, 2 };
+
+        if (Symmetric(array))
+        {
+            Console.WriteLine("Массив симметричен");
+        }
+        else
+        {
+            Console.WriteLine("Массив не симметричен");
+        }
+    }
+}
+
+//задание 2
+class Program
+{
+    static int CheckRise(int[] arr)
+    {
+        int count = 0;
+        int length = arr.Length;
+
+        for (int i = 0; i < length - 1; i++)
+        {
+            if (arr[i] <= arr[i + 1])
+            {
+                count++;
+                while (i < length - 1 && arr[i] <= arr[i + 1])
+                {
+                    i++;
+                }
+            }
+        }
+
+        return count;
+    }
+
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Элементы массива через пробел:");
+        string input = Console.ReadLine();
+        string[] inputArray = input.Split(' ');
+        int[] array = new int[inputArray.Length];
+        int n = inputArray.Length;
+
+        for (int i = 0; i < n; i++)
+        {
+            array[i] = int.Parse(inputArray[i]);
+        }
+
+        int count = CheckRise(array);
+        Console.WriteLine("Количество цепочек: " + count);
+    }
+}
+// задание 3 
+
+namespace ConsoleApp6
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int N = 5;
+            int M = 5;
+            Random r = new Random();
+            int[,] matr = new int[N, M];
+            int maxValue = -10000;
+            int minValue = 1000;
+            int k = 0;
+            int m = 0;
+            int l = 0;
+            int h = 0;
+
+            for (int i = 0; i < N; i++)
+            {
+                for (int j = 0; j < N; j++)
+                    matr[i, j] = r.Next(100);
+            }
+            for (int i = 0; i < N; i++)
+            {
+                for (int j = 0; j < N; j++)
+                {
+                    if (matr[i, j] > maxValue)
+                    {
+                        maxValue = matr[i, j];
+                        k = l;
+                        m = h;
+                    }
+                    if (matr[i, j] < minValue)
+                    {
+                        minValue = matr[i, j];
+                        l = i;
+                        h = j;
+                    }
+
+
+
+                    Console.Write($"{matr[i, j],2} ");
+                }
+                Console.WriteLine();
+
+            }
+            if (maxValue != minValue)
+            {
+                matr[l, h] = maxValue;
+                matr[k, m] = minValue;
+
+            }
+            Console.WriteLine(minValue);
+            Console.WriteLine(maxValue);
+        }
+    }
+}
